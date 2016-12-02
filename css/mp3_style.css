@@ -1,0 +1,225 @@
+*{
+	margin: 0;
+	padding: 0;
+	border: none;
+	font-family: "微软雅黑";
+	text-decoration: none;
+}
+body{
+	min-width: 804px;
+	background: #000;
+}
+canvas{
+	display: block;
+	margin: 100px auto 0;
+	transition: all 0.4s; 
+}
+audio{
+	display: none;
+	width: 500px;
+	margin: 0px auto;
+}
+#songName{
+	width: 500px;
+	height: 40px;
+	margin: 40px auto 10px;
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 40px;
+	text-indent: 1em;
+	color: #fff;
+	overflow: hidden;
+	position: relative;
+}
+#replays{
+	display: block;
+	position: absolute;
+	height: 40px;
+	line-height: 40px;
+	right: 0;
+	top: 0;
+	font-size: 14px;
+	color: #d2d2d2;
+}
+#lists{
+	position: fixed;
+	width: 300px;
+	height: 600px;
+	overflow-y: scroll;
+	overflow-x: auto;
+	top: 100px;
+	right: 30px;
+	background: #D2D2D2;
+	border: 5px solid #000;
+	opacity: 0.3;
+	transition: all 0.4s;
+}
+#lists:hover{
+	/*border: 5px solid #00FFFF;*/
+	box-shadow: #00FFFF 0 0 30px;
+	opacity: 1;
+}
+#lists a{
+	width: 100%;
+	height: 40px;
+	line-height: 40px;
+	display: block;
+	position: relative;
+	font-size: 18px;
+	text-indent: 1em;
+	color: #3C3C3C;
+	transition: all 0.3s;
+}
+#lists a:hover{
+	background: linear-gradient(to right, #22ac38 0%, #920783 100%);
+	background: -moz-linear-gradient(to right, #22ac38 0%, #920783 100%);
+	background: -webkit-linear-gradient(to right, #22ac38 0%, #920783 100%);
+	color: #FFFFFF;
+	text-indent: 0.5em;
+	font-weight: bold;
+}
+.audioCtrl{
+	width: 500px;
+	height: 40px;
+	margin: 0 auto;
+}
+.audioCtrl>input[type="image"]{
+	float: left;
+	height: 30px;
+	width: 30px;
+	cursor: pointer;
+	border-radius: 15px;
+	margin: 5px;
+	transition: box-shadow 0.5s;
+}
+.audioCtrl>input[type="image"]:hover,#rates:hover{
+	box-shadow: aqua 0 0 20px;
+}
+.audioCtrl input{
+	cursor: pointer;
+}
+#rates{
+	display: block;
+	position: relative;
+	float: left;
+	width: 170px;
+	height: 16px;
+	margin: 12px 5px;
+	border-radius: 8px;
+	background: #bfbfbf;
+	/*background: -webkit-linear-gradient( bottom, #00a0e9 0%, #dcdcdc 50%, #00a0e9 100%);
+	background: -moz-linear-gradient( bottom, #00a0e9 0%, #dcdcdc 50%, #00a0e9 100%);
+	background: linear-gradient( bottom, #00a0e9 0%, #dcdcdc 50%, #00a0e9 100%);*/
+	transition: box-shadow 0.5s;
+	overflow: hidden;
+}
+#currTime{
+	float: left;
+	height: 16px;
+	background: #ff00ff;
+	background: -webkit-linear-gradient( bottom, #b331b9 0%, #dcdcdc 50%, #b331b9 100%);
+	background: -moz-linear-gradient( bottom, #b331b9 0%, #dcdcdc 50%, #b331b9 100%);
+	background: linear-gradient( bottom, #b331b9 0%, #dcdcdc 50%, #b331b9 100%);
+	border-radius: 8px 0 0 8px;
+	box-shadow: inset #FF00FF 0 0 10px;
+}
+#rate{
+	-webkit-appearance: none;
+	display: block;
+	position: absolute;
+	width: 170px;
+	height: 16px;
+	left: 0;
+	top: 0;
+	z-index: 3;
+}
+#rate:focus{
+	outline: none;
+}
+#rate::-moz-range-track{
+	opacity: 0;
+}
+#rate::-moz-range-thumb{
+	width: 25px;
+	height: 16px;
+	border-radius: 8px;
+	background: greenyellow;
+}
+#rate::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	width: 25px;
+	height: 16px;
+	border-radius: 8px;
+	background: greenyellow;
+}
+#rate::-webkit-slider-runnable-track{
+	width: 170px;
+	height: 16px;
+	background: #059CFA;
+}
+#playtime{
+	float: left;
+	width: 70px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 12px;
+	color: #FFFFFF;
+	margin: 0 5px;
+	text-align: center;
+}
+#vol:hover{
+	box-shadow: none;
+}
+#volctrl{
+	-webkit-appearance: none;
+	float: left;
+	width: 78px;
+	height: 16px;
+	margin: 12px 0px;
+	border-radius: 8px;
+}
+#volctrl:focus{
+	outline: none;
+}
+#volctrl::-webkit-slider-thumb{
+	-webkit-appearance: none;
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-top: -2px;
+	background: #ADFF2F;
+}
+#volctrl::-webkit-slider-runnable-track{
+	height: 16px;
+	width: 78px;
+	border-radius: 8px;
+	background: #059CFA;
+}
+#volctrl::-moz-range-track{
+	height: 16px;
+	width: 78px;
+	border-radius: 8px;
+}
+#volctrl::-moz-range-thumb{
+	width: 20px;
+	height: 20px;
+	border-radius: 10px;
+	margin-top: -4px;
+}
+#volctrl::-moz-range-progress{
+	height: 16px;
+	border-radius: 8px;
+	background: linear-gradient(to right, #059CFA, white 100%, white);
+}
+#showlrc{
+	width: 800px;
+	height: 30px;
+	margin: 50px auto 0;
+	text-align: center;
+	line-height: 30px;
+	font-size: 25px;
+	font-weight: bold;
+	color: #00FFFF;
+	text-shadow: #FF00FF 0 0 5px;
+	transition: all 0.3s;
+}

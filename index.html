@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>音乐播放器</title>
+		<link rel="stylesheet" type="text/css" href="css/mp3_style.css"/>
+	</head>
+	<body>
+		<canvas id="canvas" width="804" height="300"></canvas>
+		<div id="songName">
+			<span></span>
+			<a id="replays" href="#"></a>
+		</div>
+		<div class="audioCtrl">
+			<input id="last" type="image" src="img/last.png" />
+			<input id="stop" type="image" src="img/stop.png" />
+			<input id="next" type="image" src="img/next.png" />
+			<label for="rate" id="rates">
+				<div id="currTime"></div>
+				<input type="range" name="rate" id="rate" min="0" max="100" step="0.1" value="0"/>
+			</label>
+			<span id="playtime"></span>
+			<input id="vol" type="image" src="img/volume.png" />
+			<input type="range" id="volctrl" min="0" max="1" step="0.1" value="0.5" />
+		</div>
+		<div id="showlrc"></div>
+		<div id="lists"></div>
+		<audio id="audios" src="" controls="controls"></audio>
+		<script src="js/mp3_list.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/mp3_action.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
